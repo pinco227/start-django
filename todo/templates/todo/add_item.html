@@ -10,7 +10,8 @@
 
 <body>
     <h1>Add a TODO Item:</h1>
-    <form method="POST" action="add">
+    <form method="POST" action="/add/">
+        {% csrf_token %}
         <div>
             <p>
                 <label for="id_name">Name: </label>
