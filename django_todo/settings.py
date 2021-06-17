@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import dj_database_url
 import environ
 
 env = environ.Env()
@@ -26,8 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env(
-    'SECRET_KEY', default='django-insecure-o(2y-h%a+$btxin6hzfuv00kxqbublwv9(pz%_g#d&wg#$d0k^')
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
@@ -90,7 +88,7 @@ if development:
     }
 else:
     DATABASES = {
-        'default': dj_database_url.parse(env('DATABASE_URL', default=''))
+        'default': env.db('DATABASE_URL', default='')
     }
 
 
