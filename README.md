@@ -1,2 +1,3 @@
 # start-django
-Starting up with Django
+## TODO App
+Starting up with Django, building a simple CRUD todo app
